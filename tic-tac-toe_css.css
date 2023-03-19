@@ -1,0 +1,90 @@
+body{
+    background-color: whitesmoke;
+    margin: 0;
+}
+.plansza{
+    margin: 0 auto;
+    margin-top: 1%;
+    width: 50vw;
+    height: 70vh;
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+}
+.pole{
+    width: var(--cell-size);
+    height: var(--cell-size);
+    border: .1em solid darkblue;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+}
+.pole:nth-child(1),.pole:nth-child(2),.pole:nth-child(3){
+    border-top: none;
+}
+.pole:nth-child(7),.pole:nth-child(8),.pole:nth-child(9){
+    border-bottom: none;
+}
+.pole:nth-child(1),.pole:nth-child(4),.pole:nth-child(7){
+    border-left: none;
+}
+.pole:nth-child(3),.pole:nth-child(6),.pole:nth-child(9){
+    border-right: none;
+}
+.pole:empty:hover{
+    background-color: lightblue;
+}
+.pole:not(:empty):hover{
+    background-color: lightgray;
+}
+.pole:hover .krzyz,.pole:hover .krzyz::after{
+    background: purple;
+}
+.pole:hover .kolo{
+    border-color: purple;
+}
+.kolo{
+    height: 16vh;
+    width: 16vh;
+    border: .3em solid green;
+    border-radius: 50%;
+    position: fixed;
+}
+.krzyz{
+    background: green;
+    height: 9em;
+    width: .4em;
+    position: fixed;
+    transform: rotate(45deg);
+}
+.krzyz:after{
+    background: green;
+    content: "";
+    height: .4em;
+    left: -4.2em;
+    position: absolute;
+    top: 4.2em;
+    width: 9em;
+}
+
+.resbutton{
+    margin:0 auto;
+    margin-top: 5%;
+    text-align: center;
+}
+.reset{
+    width: 10vw;
+    height: 6.5vh;
+    background-color: #90ee90;
+    color: #0000ff;
+    border-color: #008000;
+    border-radius: 2em;
+    font-family: "Comic Sans MS";
+    font-size: 1.3em;
+    font-weight: bold;
+}
+.reset:hover{
+    background-color: #64e764;
+    color: #0000cc;
+    border: .16em solid #008000;
+}
